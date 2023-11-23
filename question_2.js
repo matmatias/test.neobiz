@@ -45,7 +45,8 @@ function getCompaniesRank(data) {
     const company = elem.company;
     const isPaidObservationAmount = elem.isPaidArr.length;
     const aggIsPaid =
-      elem.isPaidArr.reduce((acc, curr) => acc + curr, 0) / isPaidObservationAmount;
+      elem.isPaidArr.reduce((acc, curr) => acc + curr, 0) /
+      isPaidObservationAmount;
 
     aggregatedIsPaidByCompanies.push({
       company: company,
@@ -53,12 +54,13 @@ function getCompaniesRank(data) {
     });
   }
 
-  return aggregatedIsPaidByCompanies.sort((a, b) => b.aggregatedIsPaid - a.aggregatedIsPaid);
+  return aggregatedIsPaidByCompanies.sort(
+    (a, b) => b.aggregatedIsPaid - a.aggregatedIsPaid,
+  );
 }
-console.log(getCompaniesRank(mockedData));
 
 function isCompanyInRank(company, isPaidByCompanies) {
-  for(let i = 0; i < isPaidByCompanies.length; ++i) {
+  for (let i = 0; i < isPaidByCompanies.length; ++i) {
     const elem = isPaidByCompanies[i];
 
     if (elem.company === company) {
@@ -68,3 +70,18 @@ function isCompanyInRank(company, isPaidByCompanies) {
 
   return false;
 }
+
+function printCompaniesRank(sortedCompanies) {
+  console.log("RANKING DAS EMPRESAS");
+
+  for (let i = 0; i < sortedCompanies.length; ++i) {
+    const rank = i + 1;
+    const company = sortedCompanies[i].company;
+    // bankers round to two decimals
+    const avg = Math.round(sortedCompanies[i].aggregatedIsPaid * 100) / 100;
+    console.log(`TOP ${rank}: Empresa ${company} com ${avg} de média.`);
+  }
+}
+
+const sortedCompanies = getCompaniesRank(mockedData);
+printCompaniesRank(sortedCompanies);

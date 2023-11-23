@@ -43,7 +43,15 @@ function getMonthAvg(consumptionData) {
 
   return monthsAvg;
 }
-console.log(getMonthAvg(mockedConsumptionData));
+
+function printMonthAvg(monthsAvg) {
+  for (let i = 0; i < monthsAvg.length; ++i) {
+    const currYear = i + 2010;
+    const monthAvg = monthsAvg[i];
+
+    console.log(`Consumo médio de energia de ${currYear}: ${monthAvg}`);
+  }
+}
 
 // QUESTION 3.II
 function getBiggestConsumptionMonthAndYear(consumptionData) {
@@ -74,7 +82,6 @@ function getBiggestConsumptionMonthAndYear(consumptionData) {
     consumption: biggestConsumption,
   };
 }
-console.log(getBiggestConsumptionMonthAndYear(mockedConsumptionData));
 
 function getYearFromYearIndex(yearIndex) {
   return FIRST_YEAR + yearIndex;
@@ -83,3 +90,21 @@ function getYearFromYearIndex(yearIndex) {
 function getMonthFromMonthIndex(monthIndex) {
   return monthIndex + 1;
 }
+
+function printBiggestConsumptionMonthAndYear(biggestConsumptionMonthAndYear) {
+  const { month, year, consumption } = biggestConsumptionMonthAndYear;
+  console.log(
+    `O mês ${month} do ano ${year} teve o maior consumo, com um consumo de ${consumption}`,
+  );
+}
+
+// QUESTION 3.I
+const monthAvg = getMonthAvg(mockedConsumptionData);
+console.log("QUESTÃO 3.1");
+printMonthAvg(monthAvg);
+// QUESTION 3.II
+console.log("QUESTÃO 3.2");
+const biggestConsumptionMonthAndYear = getBiggestConsumptionMonthAndYear(
+  mockedConsumptionData,
+);
+printBiggestConsumptionMonthAndYear(biggestConsumptionMonthAndYear);
