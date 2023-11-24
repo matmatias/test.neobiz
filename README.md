@@ -8,28 +8,7 @@ Check it out at [https://matmatias.github.io/test.neobiz/](https://matmatias.git
 - [pip](https://pip.pypa.io/en/stable/)
 - [venv](https://docs.python.org/pt-br/3/library/venv.html)
 
-## Setup
-1. Setup python virtual environment
-```bash
-python -m venv venv
-```
-
-2. Activate the virtual environment
-```bash
-source venv/bin/activate
-```
-
-3. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
 ## Run the web page locally
-If the virtual environment is not installed, activate it:
-```bash
-source venv/bin/activate
-```
-
 To run the html page on a local server, run:
 ```bash
 python -m http.server
