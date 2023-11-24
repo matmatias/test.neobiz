@@ -1,5 +1,7 @@
 # Neobiz test
-This is an implementation for Neobiz's software developer test. Check it out in [https://matmatias.github.io/test.neobiz/](https://matmatias.github.io/test.neobiz/).
+This is an implementation for Neobiz's software developer test.
+
+Check it out at [https://matmatias.github.io/test.neobiz/](https://matmatias.github.io/test.neobiz/).
 
 ## Requirements
 - [Python](https://www.python.org/) ^3.9.2
@@ -34,3 +36,20 @@ python -m http.server
 ```
 
 Now, access http://localhost:8000 on your browser.
+
+## Scripts
+If you wish to execute the javascript scripts locally, you will need [NodeJS](https://nodejs.org/en)
+
+To execute question 2 script, run:
+```bash
+node src/question_2.js
+```
+
+To execute question 3 script, run:
+```bash
+node src/question_3.js
+```
+
+The script from question 5 cannot be run because I didn't bother to setup a database with Docker, for example. This can be done in the future, but I do not guarantee that I'll do it.
+
+I also could have setup Docker to use python and nodejs in this project, but I didn't bother to do it for now.
