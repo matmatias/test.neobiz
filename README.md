@@ -24,7 +24,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Execute
+## Run the web page locally
 If the virtual environment is not installed, activate it:
 ```bash
 source venv/bin/activate
@@ -37,7 +37,7 @@ python -m http.server
 
 Now, access http://localhost:8000 on your browser.
 
-## Scripts
+## Run the questions 2 and 3 Scripts locally
 If you wish to execute the javascript scripts locally, you will need [NodeJS](https://nodejs.org/en)
 
 To execute question 2 script, run:
